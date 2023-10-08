@@ -1,0 +1,205 @@
+/* General paging style */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, red, blue);
+    padding: 10px;
+}
+
+/* Styles for the To Do List */
+.todo-website {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-website h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-website img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -100px;
+}
+
+label::before {
+    content: '';
+    transition: transform 0.2 ease;
+}
+
+label:hover::before {
+    transform: scale(1.1);
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    animation: glow 1s ease infinite;
+    transition: background-color 0.3s ease;
+}
+
+.task-checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.checkbox-custom.checked::before {
+    content: '\2713';
+    color: #555;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+}
+
+.remove-task {
+    color: #ff5945;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    align-items: center;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked div .form-check-label {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 200px;
+    height: 40px;
+    font-size: 10px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background-color: #edeef0;
+}
+
+
+
+.completed {
+    background-color: #00ff00;
+    animation: celebrate 1s ease;
+}
+
+@keyframes celebrate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
